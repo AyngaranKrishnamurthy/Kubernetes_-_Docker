@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80  # If another service sends a request it must be received here
+      targetPort: 8080  # This is the containerPort of the deployment to connect to. (port of pod to forward the request to)
