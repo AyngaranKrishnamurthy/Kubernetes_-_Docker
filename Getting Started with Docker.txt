@@ -1,0 +1,34 @@
+In order to create a docker image from an application we have to copy the contents of the application into the docker file which can be an artifact that was built.
+	Blueprint for building images, which is called a docker file.
+
+Build a DockerFile
+Step 1:	For the image that we build, we will need to base it on another image.
+Step 1:	Set Environment variables
+Step 1:	Set RUN,COPY and CMD 
+Step 1:	Save the docker file in  the name of "Dockerfile only"
+
+Build a Docker Image from the DockerFile
+Step 1: Check the DockerFile for pre-requisites
+Step 2: Run "docker build -t <img-name>:<tag> <directory of Docker-file>"			//Tag can be taken to be the version of an app
+Step 3: Once the command is run you get the id when the docker image is successfully created
+
+Delete Docker Image:
+Execute: "docker ps -a"				//Gets containers
+Execute: "docker rm <container-id>"		//Removes Container
+Execute: "docker rmi <img-id>"			//Removes Docker image
+
+Run the Docker image:
+Execute: "docker run <img-name>:<tag>"
+
+Open the integrated terminal of the container: docker exec -it <container-id> /bin/sh
+
+Dockerfile syntax:
+FROM <docker-image>
+ENV <environment-variables>
+RUN <linux-command>				//Executes inside the container
+COPY <directory> 				//Executes on the host
+CMD ["node","/home/app/server.js"]		//Executes the entry point Linux command. This line translates to "node server.js"...
+
+
+APP Security - IS Session
+
